@@ -1,5 +1,5 @@
 ## Overview
-The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. In this project, I evaluated some of their ratings data which might be useful to journalists and food critics to decide where to focus future articles. This project implements CRUD operations, which are commonly used in database systems and APIs to manage data. CRUD stands for Create, Read, Update, and Delete, representing the basic operations performed on data. I utilized the CRUD concept to create, view, modify and delete data from the database with the help of <a href=https://pymongo.readthedocs.io/en/stable/>PyMongo</a>.
+The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. In this project, I evaluated some of their ratings data which might be useful to journalists and food critics to decide where to focus future articles. This project implements CRUD operations (see diagram below), which are commonly used in database systems and APIs to manage data. CRUD stands for Create, Read, Update, and Delete, representing the basic operations performed on data. I utilized the CRUD concept to create, view, modify and delete data from the database with the help of <a href=https://pymongo.readthedocs.io/en/stable/>PyMongo</a>.
 
 <p align="center">
  
