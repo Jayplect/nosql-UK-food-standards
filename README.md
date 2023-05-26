@@ -1,9 +1,9 @@
 ## Overview
-The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. In this project, I evaluated some of their ratings data which might be useful to their journalists and food critics to decide where to focus future articles. One of the highlight of this porject is that I utilized the CRUD concept to create, view, modify and delete data from the database using PyMongo.
+The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. In this project, I evaluated some of their ratings data which might be useful to journalists and food critics to decide where to focus future articles. This project implements CRUD operations, which are commonly used in database systems and APIs to manage data. CRUD stands for Create, Read, Update, and Delete, representing the basic operations performed on data. I utilized the CRUD concept to create, view, modify and delete data from the database with the help of PyMongo.
 
 <p align="center">
  
- <img  width="300" src =https://github.com/Jayplect/nosql-challenge/assets/107348074/caf307b5-7dd0-4bf5-936d-fbdc860445bb>
+ <img  width="350" src =https://github.com/Jayplect/nosql-challenge/assets/107348074/caf307b5-7dd0-4bf5-936d-fbdc860445bb>
  
 </p>
 
