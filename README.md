@@ -7,7 +7,9 @@ The UK Food Standards Agency evaluates various establishments across the United 
  
 </p>
 
-## Dependencies used
+## Technologies
+The following technologies are used in this project:
+
 <p >
  <img  width="300" src =https://github.com/Jayplect/nosql-challenge/assets/107348074/72ec540f-c313-46a3-b5ad-1c3c965cd0ad>
 
@@ -15,6 +17,26 @@ The UK Food Standards Agency evaluates various establishments across the United 
 </p>
 
 ## Summary of Dataset
+
+CRUD Operations
+Create
+To access the database I `Created` an instance of the Mongo Client using a default port of 27017. The server then processed the request and returned the resource. To confirm that the instance was returned, I used `mongo.list_database_names()` to list the representation of the created resource (in this case the databases).
+
+Read
+To retrieve a list of all resources, make a GET request to the /api/resource endpoint. The server will respond with a list of all available resources.
+
+To retrieve a specific resource, make a GET request to the /api/resource/{id} endpoint, where {id} represents the unique identifier of the desired resource. The server will respond with the requested resource if it exists.
+
+Update
+To update an existing resource, make a PUT request to the /api/resource/{id} endpoint, where {id} represents the unique identifier of the resource to be updated. Include the updated data in the request body according to the API's specifications. The server will process the request and update the resource with the provided ID. The response may include a representation of the updated resource.
+
+Delete
+To delete a resource, make a DELETE request to the /api/resource/{id} endpoint, where {id} represents the unique identifier of the resource to be deleted. The server will process the request and delete the resource with the provided ID. The response may include a success message or a representation of the deleted resource.
+
+Conclusion
+This readme provided an overview of the CRUD operations implemented in this project. By utilizing the specified endpoints, you can create, read, update, and delete resources as per your requirements. Refer to the API documentation or further code exploration for detailed information about the request and response structures.
+
+
 
 ## Project Steps
 ### Part 1: Database and Jupyter Notebook Set Up
