@@ -1,5 +1,5 @@
 ## Description
-
+The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. In this project, I evaluated some of their ratings data which might be useful to their journalists and food critics to decide where to focus future articles.
 
 ## Dependencies used
 <img width="120" src = https://user-images.githubusercontent.com/107348074/236379504-0f0e8534-6435-4924-b72d-283946e03c4b.png>
@@ -10,8 +10,10 @@
 ## Summary of Dataset
 
 ## Project Steps
-### Part 1: Merging both data sets 
-
+### Part 1: Database and Jupyter Notebook Set Up
+Import the data provided in the `establishments.json` file from your Terminal. Name the database `uk_food` and the collection `establishments`.
+ ! mongoimport --type json -d uk_food -c establishments --drop --jsonArray path
+ 
  This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. We will coerce non-numeric values to nulls during the database setup before converting ratings to integers.
 
 
