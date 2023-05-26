@@ -1,11 +1,18 @@
-## Description
-The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. In this project, I evaluated some of their ratings data which might be useful to their journalists and food critics to decide where to focus future articles.
+## Overview
+The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. In this project, I evaluated some of their ratings data which might be useful to their journalists and food critics to decide where to focus future articles. One of the highlight of this porject is that I utilized the CRUD concept to create, view, modify and delete data from the database using PyMongo.
+
+<p align="center">
+ 
+ <img  width="300" src =https://github.com/Jayplect/nosql-challenge/assets/107348074/caf307b5-7dd0-4bf5-936d-fbdc860445bb>
+ 
+</p>
 
 ## Dependencies used
-<img width="120" src = https://user-images.githubusercontent.com/107348074/236379504-0f0e8534-6435-4924-b72d-283946e03c4b.png>
-<img width="120" src = https://user-images.githubusercontent.com/107348074/236379877-e0e3b90e-217f-4700-ade2-df8b5ef8f23b.png>
-<img width="120" src =https://user-images.githubusercontent.com/107348074/236379730-0286f397-c9e0-4e0c-a91c-e07d64f6ceec.png>
-<img width="120" src = https://user-images.githubusercontent.com/107348074/236379825-80dc02bc-46c1-46fa-9634-dc28cdcb5704.png>
+<p >
+ <img  width="300" src =https://github.com/Jayplect/nosql-challenge/assets/107348074/72ec540f-c313-46a3-b5ad-1c3c965cd0ad>
+
+ <img  width="200" src = https://user-images.githubusercontent.com/107348074/236379825-80dc02bc-46c1-46fa-9634-dc28cdcb5704.png>
+</p>
 
 ## Summary of Dataset
 
