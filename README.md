@@ -39,13 +39,14 @@ An exciting new halal restaurant ("Penang Flavours") that just opened in Greenwi
          collection.update_one({id},{$set:{dict}})
 
 > Delete
+
 To demostrate this operation, I assumed that most Journalists and food critics may not be interested in any establishments within the Dover Local Authority from the database. So I checked how many documents contained the Dover Local Authority. Then, made a delete request to the resource using the {_id} endpoint, where {id} represents the unique identifier of the resource to be deleted.
          
          #delete fields
          collection.delete_many({id})
 
 Conclusion
-This readme provided an overview of the CRUD operations implemented in this project. By utilizing the specified endpoints, you can create, read, update, and delete resources as per your requirements. Refer to the API documentation or further code exploration for detailed information about the request and response structures.
+This readme provided an overview of the CRUD operations implemented in this project. By utilizing the specified endpoints, you can create, read, update, and delete resources as per your requirements. Refer to the code exploration for detailed information about the request and response structures.
 
 
 
