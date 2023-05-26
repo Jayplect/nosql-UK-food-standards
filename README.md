@@ -16,12 +16,16 @@ The following technologies/libraries are used in this project:
  <img  width="200" src = https://user-images.githubusercontent.com/107348074/236379825-80dc02bc-46c1-46fa-9634-dc28cdcb5704.png>
 </p>
 
-## Summary of Dataset
+## Project Steps
+### Part 1: Database and Jupyter Notebook Set Up
 
-CRUD Operations
+- CRUD Operations
 
 > Create
+To begin, I imported the data from my Terminal.The <database>, <collection> and <path> represent the any specified database name, collection name and relative path of the data file. 
 
+ ! mongoimport --type json -d <database> -c <collection> --drop --jsonArray <path>
+ 
 To access the database I `Created` an instance of the Mongo Client using a default port of 27017. The server then processed the request and returned the resource. To confirm that the instance was returned, I used `mongo.list_database_names()` to list the representation of the created resource (in this case the databases).
 
 > Read
@@ -46,14 +50,13 @@ To demostrate this operation, I assumed that most Journalists and food critics m
          collection.delete_many({id})
 
 Conclusion
-This readme provided an overview of the CRUD operations implemented in this project. By utilizing the specified endpoints, you can create, read, update, and delete resources as per your requirements. Refer to the code exploration for detailed information about the request and response structures.
+This readme provided an overview of the CRUD operations implemented in this project. By utilizing the specified endpoints, you can create, read, update, and delete resources as per your requirements. Refer to the <a href="https://github.com/Jayplect/nosql-challenge/tree/main">main page</a> to explore the codes and for detailed information about the request and response structures.
 
 
 
 ## Project Steps
 ### Part 1: Database and Jupyter Notebook Set Up
-Import the data provided in the `establishments.json` file from your Terminal. Name the database `uk_food` and the collection `establishments`.
- ! mongoimport --type json -d uk_food -c establishments --drop --jsonArray path
+
  
  This field also includes non-numeric values such as 'Pass', where 'Pass' means that the establishment passed their inspection but isn't given a number rating. We will coerce non-numeric values to nulls during the database setup before converting ratings to integers.
 
