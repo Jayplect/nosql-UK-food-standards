@@ -21,11 +21,11 @@ The following technologies/libraries are used in this project:
 
 - Create
 
-To begin, I imported the data from my Terminal.The <database>, <collection> and <path> represent the any specified database name, collection name and relative path of the data file. 
+To begin, I imported the data from my Terminal. The database, collection and path represents any specified database name, collection name and relative path of the data file. 
 
     ! mongoimport --type json -d <database> -c <collection> --drop --jsonArray <path>
  
-To access the database I `Created` an instance of the Mongo Client using a default port of 27017. The server then processed the request and returned the resource. To confirm that the instance was returned, I used `mongo.list_database_names()` to list the representation of the created resource (in this case the databases).
+To access the database I `created` an instance of the Mongo Client using a default port of 27017. The server then processed the request and returned the resource. To confirm that the instance was returned, I used `mongo.list_database_names()` to list the representation of the created resource (in this case the databases).
  
     # Create an instance of MongoClient
     mongo = MongoClient(port=27017)
@@ -38,7 +38,7 @@ To access the database I `Created` an instance of the Mongo Client using a defau
 
 - Read
 
-I retrieved a list of all collections associated with the database of interest using `db.list_collection_names()`. Typically, the server will respond with a list of all available collections. Clearly, I have only one collection and so I assigned this collection to a variable.
+Under this operation, I retrieved a list of all collections associated with the database of interest using `db.list_collection_names()`. Typically, the server will respond with a list of all available collections. Clearly, I have only one collection and so I assigned this collection to a variable.
 
     # review the collections in our new database
     print(db.list_collection_names())
@@ -48,8 +48,7 @@ I retrieved a list of all collections associated with the database of interest u
 
 - Update
 
-An exciting new halal restaurant ("Penang Flavours") just opened in Greenwich, but hasn't been rated yet. I inserted this new restaurant with all its information (i.e., {new_dict}) into the collection using `insert_one` function.  However, to update specific fields, I made a PUT request using PyMongo `update_one()` function to the resource. The {id} represents the unique identifier of the resource to be updated while the {dict} represent the new updates. The server will then process the request and update the resource with the provided id. The response included a representation of the updated resource in an object form which I iterated upon.
-Furthermore, I observed that some of the number values were stored as strings, when they should in fact be stored as numbers. Therefore, I had to change the data type from String to Decimal for `longitude` and  `lattitude`. For `RatingValue`i set the non 1-5 Rating Values to Null before updating data type to integer.
+An exciting new halal restaurant ("Penang Flavours") just opened in Greenwich, but hasn't been rated yet. Thus, I inserted this new restaurant with all its information (i.e., {new_dict}) into the collection using `insert_one` function.  However, to update specific fields, I made a PUT request using PyMongo `update_one()` function to the resource. The {id} represents the unique identifier of the resource to be updated while the {dict} represent the new updates. The server will then process the request and update the resource with the provided id. The response included a representation of the updated resource in an object form which I iterated upon. In addition, I observed that some of the number values were stored as strings, when they should in fact be stored as numbers. Therefore, I had to change the data type from String to Decimal for `longitude` and  `lattitude`. For `RatingValue`i set the non 1-5 Rating Values to Null before updating data type to integer.
  
     #insert a new dictionary
     collection.insert_one({new_dict})
@@ -59,19 +58,22 @@ Furthermore, I observed that some of the number values were stored as strings, w
 
 - Delete
 
-To demostrate this operation, I assumed that most Journalists and food critics may not be interested in any establishments within the Dover Local Authority from the database. So I checked how many documents contained the Dover Local Authority. Then, made a delete request to the resource using the {_id} endpoint, where {id} represents the unique identifier of the resource to be deleted.
+For this process, I assumed that most Journalists and food critics may not be interested in any establishments within the Dover Local Authority from the database. So I checked how many documents contained the Dover Local Authority and then made a delete request to the resource using the {id} endpoint, where {id} represents the unique identifier of the resource to be deleted.
          
     #delete fields
     collection.delete_many({id})
 
 ### Part 2: Exploratory Analysis
  
-In this part of the project, I queried the database using the PyMongo `find()` function. To futher analyze data for a group of documents I used MongoDB Aggregation operations.
+In this part of the project, I queried the database using the PyMongo `find()` function to answer specific questions along the way. In order to analyze data for a group of documents I used MongoDB Aggregation operations. The questions and the approach used for the analysis are discussed below:
  
 #1 The first analysis queried the establishments that had a hygiene score equal to 20.
-#2 Secondly, I investigated the establishments in London with a RatingValue greater than or equal to 4. Here i used `$regex` to do an exact word match for London.
-#3 Iwas inquisitive to know the top 5 establishments with a RatingValue of 5, sorted by lowest hygiene score. More particularly I wanted to know which of this top establishment was nearest to the new restaurant ("Penang Flavours") added. To perform this analysis, I compared the geocode to find the nearest locations wihtin a search limit of 0.01 degree on either side of the latitude and longitude.
-#4 Lastly, I figured that it might be worthwhile knowing how many establishments in each Local Authority area have a hygiene score of 0. To perform this analysis, I use the <a href="https://www.mongodb.com/docs/manual/core/aggregation-pipeline/">aggregation method</a> to answer this and then sorted the results from highest to lowest to reveal the top ten local authority areas.
+
+#2 Secondly, I searched the establishments in London with a RatingValue greater than or equal to 4. To carry out this search, I used `$regex` to do an exact word match for London.
+
+#3 I was inquisitive to know the top 5 establishments with a RatingValue of 5, sorted by lowest hygiene score. More particularly I wanted to know which of these top establishments was nearest to the new restaurant ("Penang Flavours") added. To perform this analysis, I compared the geocode to find the nearest locations wihtin a search limit of 0.01 degree on either side of the latitude and longitude.
+
+#4 Lastly, I figured that it might be worthwhile to know how many establishments in each Local Authority area have a hygiene score of 0. To execute this analysis, I use the <a href="https://www.mongodb.com/docs/manual/core/aggregation-pipeline/">aggregation method</a> to answer this and then sorted the results from highest to lowest to reveal the top ten local authority areas.
 
 ## Conclusion
 This readme provided an overview of the CRUD operations implemented in this project. By utilizing the specified endpoints, you can create, read, update, and delete resources as per your requirements. Refer to the <a href="https://github.com/Jayplect/nosql-challenge/tree/main">main page</a> to explore my codes and for detailed information about the request and response structures.
