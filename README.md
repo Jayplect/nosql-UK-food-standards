@@ -7,8 +7,8 @@ The UK Food Standards Agency evaluates various establishments across the United 
  
 </p>
 
-## Technologies
-The following technologies are used in this project:
+## Technologies/Libraries
+The following technologies/libraries are used in this project:
 
 <p >
  <img  width="300" src =https://github.com/Jayplect/nosql-challenge/assets/107348074/72ec540f-c313-46a3-b5ad-1c3c965cd0ad>
@@ -19,19 +19,30 @@ The following technologies are used in this project:
 ## Summary of Dataset
 
 CRUD Operations
-Create
+
+> Create
+
 To access the database I `Created` an instance of the Mongo Client using a default port of 27017. The server then processed the request and returned the resource. To confirm that the instance was returned, I used `mongo.list_database_names()` to list the representation of the created resource (in this case the databases).
 
-Read
-To retrieve a list of all resources, make a GET request to the /api/resource endpoint. The server will respond with a list of all available resources.
+> Read
 
-To retrieve a specific resource, make a GET request to the /api/resource/{id} endpoint, where {id} represents the unique identifier of the desired resource. The server will respond with the requested resource if it exists.
+I retrieved a list of all collections associated with a database using `db.collections.find_one()`. The server will respond with a list of all available collections.
 
-Update
-To update an existing resource, make a PUT request to the /api/resource/{id} endpoint, where {id} represents the unique identifier of the resource to be updated. Include the updated data in the request body according to the API's specifications. The server will process the request and update the resource with the provided ID. The response may include a representation of the updated resource.
+> Update
 
-Delete
-To delete a resource, make a DELETE request to the /api/resource/{id} endpoint, where {id} represents the unique identifier of the resource to be deleted. The server will process the request and delete the resource with the provided ID. The response may include a success message or a representation of the deleted resource.
+An exciting new halal restaurant ("Penang Flavours") that just opened in Greenwich, but hasn't been rated yet. I inserted this new restaurant (i.e., {new_dict}) into the collection using `insert_one` function.  However, to update specific fields, I made a PUT request using PyMongo `update_one()` function to the resource. The {id} represents the unique identifier of the resource to be updated while the {dict} represent the new updates. The server will then process the request and update the resource with the provided id. The response included a representation of the updated resource in an object form which I iterated upon.
+ 
+         #insert a new dictionary
+         collection.insert_one({new_dict})
+
+         #update field
+         collection.update_one({id},{$set:{dict}})
+
+> Delete
+To demostrate this operation, I assumed that most Journalists and food critics may not be interested in any establishments within the Dover Local Authority from the database. So I checked how many documents contained the Dover Local Authority. Then, made a delete request to the resource using the {_id} endpoint, where {id} represents the unique identifier of the resource to be deleted.
+         
+         #delete fields
+         collection.delete_many({id})
 
 Conclusion
 This readme provided an overview of the CRUD operations implemented in this project. By utilizing the specified endpoints, you can create, read, update, and delete resources as per your requirements. Refer to the API documentation or further code exploration for detailed information about the request and response structures.
